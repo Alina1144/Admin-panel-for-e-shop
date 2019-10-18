@@ -1,0 +1,98 @@
+table{
+	margin: auto;
+	text-align: center;
+	table-layout: fixed;
+	position: relative; 
+}
+table, tr, th, td{
+	padding: 20px;
+	color: white;
+	border: 1px solid #080808;
+	border-collapse: collapse;
+	font-size: 11px;
+	font-family: Arial;
+	background: linear-gradient(top, #151719 0%, #222222 100%);
+	background: -webkit-linear-gradient(top, #151719 0%, #222222 100%);
+}
+body {
+        color: #404E67;
+        background: #F5F7FA;
+		font-family: 'Open Sans', sans-serif;
+	}
+	.table-wrapper {
+		width: 880px;
+		margin: 30px auto;
+        background: #fff;
+        padding: 20px;	
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .table-title {
+        padding-bottom: 10px;
+        margin: 0 0 10px;
+        color: #151719;
+    }
+    .table-title h2 {
+        margin: 6px 0 0;
+        font-size: 22px;
+        color: #151719;
+    }
+    .table-title .add-new {
+        float: right;
+		height: 30px;
+		font-weight: bold;
+		font-size: 12px;
+		text-shadow: none;
+		min-width: 100px;
+		border-radius: 50px;
+		line-height: 13px;
+    }
+	.table-title .add-new i {
+		margin-right: 4px;
+	}
+    table.table {
+        table-layout: fixed;
+    }
+    table.table tr th, table.table tr td {
+        border-color: #e9e9e9;
+    }
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    table.table th:last-child {
+        width: 100px;
+    }
+    table.table td a {
+		cursor: pointer;
+        display: inline-block;
+        margin: 0 5px;
+		min-width: 24px;
+    }    
+	/*table.table td a.add {
+        color: #27C46B;
+    }
+    table.table td a.edit {
+        color: #FFC107;
+    }
+    table.table td a.delete {
+        color: #E34724;
+    }*/
+    table.table td i {
+        font-size: 16px;
+    }
+	table.table td a.add i {
+        font-size: 24px;
+    	margin-right: -1px;
+        position: relative;
+        top: 3px;
+    }    
+    table.table .form-control {
+        height: 32px;
+        line-height: 32px;
+        box-shadow: none;
+        border-radius: 2px;
+    }
+	table.table td .add {
+		display: none;
+	}

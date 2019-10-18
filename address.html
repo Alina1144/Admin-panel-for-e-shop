@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="tables.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<title>Admin Panel</title>
+</head>
+<body>
+	<div id="headerMain">
+		<div class="header" id="header">
+	  	<a href="main.html" class="logo">e-shop</a>
+	  		<div class="header-right">
+	    <a class="active" href="https://www.google.com/search?q=google&oq=google&aqs=chrome..69i57j69i60l3j69i65l2.3607j0j7&sourceid=chrome&ie=UTF-8">Log out</a>
+	 		 </div>
+		</div>
+	</div>
+
+	<div id="sidebar">
+  <div class="toggle-btn" onclick="toggleSidebar()"><a>
+   <span></span>
+   <span></span>
+   <span></span>
+  </a>
+  </div>
+  <ul>
+   <li><a href="address.html">Address</a></li>
+   <li><a href="user.html">User</a></li>
+   <li><a href="order.html">Order</a></li>
+   <li><a href="category.html">Category</a></li>
+   <li><a href="subCategory.html">SubCategory</a></li>
+   <li><a href="product.html">Product</a></li>
+   <li><a href="productInfo.html">ProductInfo</a></li>
+   <li><a href="orderItem.html">OrderInfo</a></li>
+   <li><a href="tag.html">Tag</a></li>
+   <li><a href="image.html">Image</a></li>
+  </ul>
+ </div>
+ <script type="text/javascript">
+  function toggleSidebar(){
+   document.getElementById("sidebar").classList.toggle('active');
+  }
+ </script>
+	
+
+<div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Address | Quantity<b></b></h2></div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered"  onclick='alert(this.rows.length)'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>CITY</th>
+                        <th>COUNTRY</th>
+                        <th>NAME</th>
+                        <th>SURNAME</th>
+                        <th>POSTAL_CODE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    </tr>      
+                </tbody>
+            </table>
+            <!--<div class="col-sm-4">
+                <button type="button" class="btn btn-info delete-all"><i class="..."></i>Delete all</button>
+            </div> -->
+        </div> 
+    </div>     
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();
+	var actions = $("table td:last-child").html();
+	// Append table with add row form on add new button click
+    $(".add-new").click(function(){
+		$(this).attr("disabled", "disabled");
+		var index = $("table tbody tr:last-child").index();
+        var row = '<tr>' +
+            '<td><input type="text" class="form-control" name="ID" id="ID"></td>' +
+            '<td><input type="text" class="form-control" name="CITY" id="CITY"></td>' +
+            '<td><input type="text" class="form-control" name="COUNTRY" id="COUNTRY"></td>' +
+            '<td><input type="text" class="form-control" name="NAME" id="NAME"></td>' +
+            '<td><input type="text" class="form-control" name="SURNAME" id="SURNAME"></td>' +
+            '<td><input type="text" class="form-control" name="POSTAL_CODE" id="POSTAL_CODE"></td>' +
+
+			'<td>' + actions + '</td>' +
+        '</tr>';
+    	$("table").append(row);		
+		$("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+	// Add row on add button click
+	$(document).on("click", ".add", function(){
+		var empty = false;
+		var input = $(this).parents("tr").find('input[type="text"]');
+        input.each(function(){
+			if(!$(this).val()){
+				$(this).addClass("error");
+				empty = true;
+			} else{
+                $(this).removeClass("error");
+            }
+		});
+		$(this).parents("tr").find(".error").first().focus();
+		if(!empty){
+			input.each(function(){
+				$(this).parent("td").html($(this).val());
+			});			
+			$(this).parents("tr").find(".add, .edit").toggle();
+			$(".add-new").removeAttr("disabled");
+		}		
+    });
+	// Edit row on edit button click
+	$(document).on("click", ".edit", function(){		
+        $(this).parents("tr").find("td:not(:last-child)").each(function(){
+			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+		});		
+		$(this).parents("tr").find(".add, .edit").toggle();
+		$(".add-new").attr("disabled", "disabled");
+    });
+	// Delete row on delete button click
+	$(document).on("click", ".delete", function(){
+        $(this).parents("tr").remove();
+		$(".add-new").removeAttr("disabled");
+    });
+});
+</script>
+
+                         

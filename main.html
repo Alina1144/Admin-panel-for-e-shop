@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="tables.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <title>Admin Panel</title>
+</head>
+
+ <script type="text/javascript">
+  function toggleSidebar(){
+   document.getElementById("sidebar").classList.toggle('active');
+  }
+ </script>
+
+<body>
+    <div id="headerMain">
+    <div class="header" id="header">
+      <a href="main.html" class="logo">e-shop</a>
+        <div class="header-right">
+      <a class="active" href="https://www.google.com/search?q=google&oq=google&aqs=chrome..69i57j69i60l3j69i65l2.3607j0j7&sourceid=chrome&ie=UTF-8">Log out</a>
+       </div>
+    </div>
+  </div>
+
+ <div id="sidebar">
+  <div class="toggle-btn" onclick="toggleSidebar()"><a>
+   <span></span>
+   <span></span>
+   <span></span>
+  </a>
+  </div>
+  <ul>
+   <li><a href="address.html">Address</a></li>
+   <li><a href="user.html">User</a></li>
+   <li><a href="order.html">Order</a></li>
+   <li><a href="category.html">Category</a></li>
+   <li><a href="subCategory.html">SubCategory</a></li>
+   <li><a href="product.html">Product</a></li>
+   <li><a href="productInfo.html">ProductInfo</a></li>
+   <li><a href="orderItem.html">OrderInfo</a></li>
+   <li><a href="tag.html">Tag</a></li>
+   <li><a href="image.html">Image</a></li>
+  </ul>
+ </div>  
+
+
+</body>
+</html>
